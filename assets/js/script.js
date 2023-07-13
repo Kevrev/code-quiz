@@ -31,6 +31,20 @@ const questionNumber = $(".questionNumber");
 const questionText = questionDiv.find(".questionText");
 const answerButtons = questionDiv.find(".answerButton");
 
+// hides question and final result page by default
+$(".timer").hide();
+$(".visibility").hide();
+$(".finalresult").hide();
+$(".clearButton").hide();
+
+// reveals the first quesiton, timer, and hides the start button / instructions
+$(".startButton").on("click", function() {
+    $(".visibility").show();
+    $(".instructionsWrapper").hide();
+    timer();
+});
+  
+
 // 60 second timer
 let timeLeft = 60;
 
@@ -71,6 +85,8 @@ function loadQuestion(index) {
     });
 }
 
+loadQuestion(currentQuestionIndex);
+
 function answerClick() {
     // grabs the text of the answer that was clicked
     const selectedAnswer = $(this).text();
@@ -103,23 +119,45 @@ function answerClick() {
     }
 }
 
-function finalresult() {
-    $(".finalresult").show();
-    $(".finalresult").text("You got " + correctAnswers + " out of " + questions.length + " correct!");
-}
-
-// hides question and final result page by default
-$(".timer").hide();
-$(".visibility").hide();
-$(".finalresult").hide();
-
-// reveals the first quesiton, timer, and hides the start button / instructions
-$(".startButton").on("click", function() {
-    $(".visibility").show();
-    $(".instructionsWrapper").hide();
-    timer();
-});
-  
 answerButtons.on("click", answerClick);
 
-loadQuestion(currentQuestionIndex);
+// saves initials and score to local storage
+function saveScore() {
+    $(".save").on("click", function() {
+      const initials = $(".initials").val();
+      const score = correctAnswers;
+      const scoreObject = {
+        initials: initials,
+        score: score
+      };
+      const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+      highScores.push(scoreObject);
+      localStorage.setItem("highScores", JSON.stringify(highScores));
+    // renders leaderboard
+      displayLeaderboard(highScores);
+    // renders clear button after saving score
+      $(".clearButton").show();
+    });
+  }
+
+function displayLeaderboard(highScores) {
+    const leaderboardList = $("#leaderboardlist");
+    leaderboardList.empty();
+  
+    highScores.forEach(function(score, index) {
+        // creates an element for each score
+      const listItem = $("<div>").text(`${index + 1}. ${score.initials}: ${score.score}`);
+      leaderboardList.append(listItem);
+    });
+}
+
+function finalresult() {
+    $(".finalresult").show();
+    $(".finalscore").text("You got " + correctAnswers + " out of " + questions.length + " correct!");
+    saveScore();
+}
+
+$(".clearButton").on("click", function() {
+    localStorage.removeItem("highScores");
+    displayLeaderboard(); 
+});

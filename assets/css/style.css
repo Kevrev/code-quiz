@@ -41,6 +41,10 @@ body {
     flex-wrap: wrap;
 }
 
+.timer {
+    font-weight: 600;
+}
+
 .quizWrapper {
     width: 30%;
     padding: 1rem;
@@ -50,6 +54,10 @@ body {
 .questionWrapper {
     display: flex;
     flex-direction: row;
+}
+
+.questionNumber {
+    padding-right: 5px;
 }
 
 .answerWrapper {
@@ -68,4 +76,22 @@ body {
 
 .wrong {
     color: red;
+}
+
+.finalresult {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.finalcard {
+    padding: 1rem;
+    margin: 2rem;
+    align-items: center;
+    
+}
+
+.finalscore {
+    font-size: 2rem;
 }
