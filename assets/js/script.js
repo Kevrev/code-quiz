@@ -31,6 +31,30 @@ const questionNumber = $(".questionNumber");
 const questionText = questionDiv.find(".questionText");
 const answerButtons = questionDiv.find(".answerButton");
 
+// 60 second timer
+let timeLeft = 60;
+
+// timer function
+function timer() {
+    // reveals the timer
+    $(".timer").show();
+    // sets the timer interval
+    let timerInterval = setInterval(function() {
+    // counts down the timer
+      timeLeft--;
+        // displays the time left
+      $(".timer").text("Time Left: " + timeLeft);
+      if (timeLeft === 0) {
+        // stops the timer, hides the timer, and shows the final result
+        clearInterval(timerInterval);
+        $(".timer").text("Time's up!");
+        // prevents questions from being answer after timer is up
+        $(".visibility").hide();
+        finalresult();
+      }
+    }, 1000);
+}
+
 // current question 
 let currentQuestionIndex = 0;
 // tally of correct answers
@@ -59,9 +83,9 @@ function answerClick() {
       $(".informant").addClass("correct").removeClass("wrong");
     //   adds to the tally of correct answers
         correctAnswers++;
-    // if the answer is not correct
     } else {
-    // TODO: add a timer to subtract time
+    // if the answer is not correct
+      timeLeft -= 10;  
       $(".informant").text("Previous Answer - Wrong");
       $(".informant").addClass("wrong").removeClass("correct");
     }
@@ -74,24 +98,26 @@ function answerClick() {
       loadQuestion(currentQuestionIndex);
     // if there are no more questions, show the final result
     } else {
-        $(".visbility").hide();
-        $(".finalresult").show();
+        $(".visibility").hide();
         finalresult();
     }
 }
 
 function finalresult() {
+    $(".finalresult").show();
     $(".finalresult").text("You got " + correctAnswers + " out of " + questions.length + " correct!");
 }
 
 // hides question and final result page by default
+$(".timer").hide();
 $(".visibility").hide();
 $(".finalresult").hide();
 
-// reveals the first quesiton and hides the start button
+// reveals the first quesiton, timer, and hides the start button
 $(".startButton").on("click", function() {
     $(".visibility").show();
     $(".startButton").hide();
+    timer();
 });
   
 answerButtons.on("click", answerClick);
