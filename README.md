@@ -2,38 +2,32 @@
 
 ## Description
 
-This weather dashboard utilizes a third-party API to provide current and upcoming weather conditions for the next 5 days for any city provided in the search bar. The user is presented with weather conditions like temperature, wind speed, humidity, and an icon illustrating the current weather conditions at a glance. The search history is saved to local storage and displayed for the user to see.
+This application uses knowledge of javascript to produce a coding quiz that is rendered through multiple elements on a single page. The quiz is timed and a user's score is based on the amount of correct questions they answer. Answer a question incorrectly and the timer is reduced by 10 seconds. When the timer reaches zero or all questions are answered, the scored is tallied and can be saved to a leaderboard.
 
 ## Usage
 
-Users are greeted with a search bar from which they can enter a city of their choice. The respective weather conditions for the current time and upcoming 5 day forecast are retrieved through the OpenWeather API and displayed on the page. To search for a new city, users can simply repeat the process. Their search history is saved to local storage and can be cleared with a button at the bottom of the list.
+Press the start button to begin taking the quiz. Answer each question by clicking on what is believed to be the correct answer. Once all questions are answered or the timer reaches zero, users can enter their name to save their score to the leaderboard. Afterwards, a list of previous entries will be displayed with their respective scores and can be cleared.
 
 ![Screenshot](./assets/images/screenshot.jpg)
 
 Link to the deployed website itself:
 
-https://kevrev.github.io/weather-dashboard/
+https://kevrev.github.io/code-quiz/
 
 One can also view the index.html, script.js, and style.css files independently in the GitHub repository:
 
-https://github.com/Kevrev/weather-dashboard
+https://github.com/Kevrev/code-quiz
 
 ## Technology Used
 
-[MDBootstrap](https://mdbootstrap.com/)
+[Bootstrap](https://getbootstrap.com/)
 
 [jQuery](https://jquery.com/)
 
-[day.js](https://day.js.org/)
-
-[OpenWeather API](https://openweathermap.org/api)
-
-[OpenWeather GeoCoding API](https://openweathermap.org/api/geocoding-api)
-
-[OpenWeather current weather API](https://openweathermap.org/current)
-
-[OpenWeather forecast API](https://openweathermap.org/forecast5)
-
 ## Credits
 
-Credit to the OpenWeather team for the API, but also their thorough documentation and examples that make it easy to use and parse.
+Credit to [ChatGPT](https://chat.openai.com/) for assistance in generating various questions that could be used for the quiz. 
+
+Credit to [Nijraj Gelani](https://stackoverflow.com/questions/56537727/how-setinterval-function-works) on StackOverflow as well as other commentors for their explanations of setInterval() and clearInterval() which helped in understanding how to create a timer.
+
+Credit to [this thread](https://stackoverflow.com/questions/32878481/how-to-use-local-storage-in-javascript-and-output-the-stored-elements-in-a-table) on StackOverflow for explaining how to use localStorage to create a leaderboard.
