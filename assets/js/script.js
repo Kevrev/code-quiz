@@ -1,29 +1,29 @@
 const questions = [
     {
-        question: "Answer is A",
-        choices: ["Answer A", "Answer B", "Answer C", "Answer D"],
-        answer: "Answer A"
-      },
-      {
-        question: "Answer is C",
-        choices: ["Answer A", "Answer B", "Answer C", "Answer D"],
-        answer: "Answer C"
-      },
-      {
-        question: "Answer is D",
-        choices: ["Answer A", "Answer B", "Answer C", "Answer D"],
-        answer: "Answer D"
-      },
-      {
-        question: "Answer is D",
-        choices: ["Answer A", "Answer B", "Answer C", "Answer D"],
-        answer: "Answer D"
-      },
-      {
-        question: "Answer is D",
-        choices: ["Answer A", "Answer B", "Answer C", "Answer D"],
-        answer: "Answer D"
-      }
+      question: "At what index is name Josh in the array '[Tyler, Josh, James, Perry]'?",
+      choices: ["0", "1", "2", "Josh"],
+      answer: "1"
+    },
+    {
+      question: "Which symbol is used for comments in JavaScript?",
+      choices: ["//", "*", "#", "--"],
+      answer: "//"
+    }, 
+    {
+      question: "What keyword is used to declare a variable in JavaScript?",
+      choices: ["this", "is", "var", "int"],
+      answer: "var"
+    },
+    {
+      question: "What does the 'console.log()' function do in JavaScript?",
+      choices: ["Prints output to the console", "Prompts the user for input", "Performs mathematical calculations", "Creates an alert dialog"],
+      answer: "Prints output to the console"
+    },
+    {
+      question: "What is the result of the expression 'true && false'?",
+      choices: ["true", "false", "undefined", "null"],
+      answer: "false"
+    }
 ];
 
 const questionDiv = $(".visibility");
