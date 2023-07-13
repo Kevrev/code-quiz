@@ -2,6 +2,66 @@
     display: none;
 } */
 
+body {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='74' height='74' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23E3F5FB' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    background: rgb(90,148,222);
+    background: radial-gradient(circle, rgba(90,148,222,1) 27%, rgba(122,169,228,1) 67%, rgba(156,190,230,1) 100%);
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    padding: 0.5rem;
+}
+
+.instructionsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.instructions {
+    width: 30%;
+    padding: 1rem;
+    margin: 2rem;
+    align-items: center;
+}
+
+.flexWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.quizWrapper {
+    width: 30%;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.questionWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.answerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.answerButton {
+    margin: .5rem
+}
+
 .correct {
     color: green;
 }

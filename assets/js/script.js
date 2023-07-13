@@ -113,10 +113,10 @@ $(".timer").hide();
 $(".visibility").hide();
 $(".finalresult").hide();
 
-// reveals the first quesiton, timer, and hides the start button
+// reveals the first quesiton, timer, and hides the start button / instructions
 $(".startButton").on("click", function() {
     $(".visibility").show();
-    $(".startButton").hide();
+    $(".instructionsWrapper").hide();
     timer();
 });
   

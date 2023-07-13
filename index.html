@@ -13,35 +13,43 @@
 </head>
 <body>
     <header>
-        <h1 class="title">
-            Coding Quiz
-        </h1>
+        <div class="head">
+            <h1 class="title">
+                Coding Quiz
+            </h1>
+        </div>
     </header>
-    <div class="instructions">
-        <h2 class="instructionsTitle">
-            Coding Quiz
-        </h2>
-        <p class="instructionsText">
-            You will have 60 seconds to answer the 5 questions in this quiz. Answering a question incorrectly will reduce the time you have. Press start to begin and good luck!
-        </p>
-        <button class="startButton">Start</button>
+    <div class="instructionsWrapper">
+        <div class="instructions card">
+            <h2 class="instructionsTitle">
+                Instructions
+            </h2>
+            <p class="instructionsText">
+                You will have 60 seconds to answer the 5 questions in this quiz. Answering a question incorrectly will reduce the time you have. Press start to begin and good luck!
+            </p>
+            <button class="startButton btn btn-primary">Start</button>
+        </div>
     </div>
-    <div class="timer"></div>
-    <div class="visibility">
-        <div class="questionContainer">
-            <div class="questionWrapper">
-                <div class="questionNumber"></div>
-                <div class="questionText"></div>
-            </div>
-            <div class="answerWrapper">
-                <button class="answerButton">A.</button>
-                <button class="answerButton">B.</button>
-                <button class="answerButton">C.</button>
-                <button class="answerButton">D.</button>
+    <div class="flexWrapper">
+        <div class="quizWrapper card visibility">
+            <div class="timer"></div>
+            <div class="">
+                <div class="questionContainer">
+                    <div class="questionWrapper">
+                        <div class="questionNumber"></div>
+                        <div class="questionText"></div>
+                    </div>
+                    <div class="answerWrapper">
+                        <button class="answerButton btn btn-primary">A.</button>
+                        <button class="answerButton btn btn-primary">B.</button>
+                        <button class="answerButton btn btn-primary">C.</button>
+                        <button class="answerButton btn btn-primary">D.</button>
+                    </div>
+                </div>
+                <hr class="hr" />
+                <div class="informant"></div>
             </div>
         </div>
-        <hr class="hr" />
-        <div class="informant"></div>
     </div>
     <div class="finalresult"></div>
     
